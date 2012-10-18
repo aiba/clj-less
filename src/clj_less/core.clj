@@ -58,8 +58,10 @@
             (.toString r)))
         (catch JavaScriptException jse
           (let [value (.getValue jse)
-                message (ScriptableObject/getProperty value "message")]
-            (throw (Exception. message jse))))
+                [type message line] (map #(ScriptableObject/getProperty value %)
+                                         ["type" "message" "line"])]
+            (throw (Exception. (format "LESS %s error (line %d): %s"
+                                       type (int line) message)))))
         (finally
           (Context/exit))))))
 
