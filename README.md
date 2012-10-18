@@ -10,9 +10,20 @@ atom, so they are potentially blocking.
 Some parts ported from java to clojure from the official Java less
 compiler: https://github.com/marceloverdijk/lesscss-java
 
-## Usage
+## Install
 
-FIXME
+Add the following dependency to your `project.clj` file:
+
+    [clj-less "0.1"]
+
+## Example
+
+```clojure
+(use 'clj-less.core)
+
+(less "@color: #4D926F;
+       body { background: @color; }")
+```
 
 ## License
 
