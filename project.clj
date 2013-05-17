@@ -1,4 +1,4 @@
-(defproject clj-less "0.1"
+(defproject clj-less "1.3.3"
   :description "Faster clojure less css compiler."
   :url "https://github.com/aiba/clj-less"
   :license {:name "Eclipse Public License"
