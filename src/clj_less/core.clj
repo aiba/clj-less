@@ -16,8 +16,8 @@
 
 (defn- init-less-compiler-scope []
   (binding [*out* (java.io.StringWriter.)]
-    (let [env-js (io/resource "META-INF/env.rhino.js")
-          less-js (io/resource "META-INF/less.js")
+    (let [env-js (io/resource "clj-less/env.rhino.1.2.js")
+          less-js (io/resource "clj-less/less-1.3.3.js")
           cx (doto (Context/enter)
                (.setOptimizationLevel -1)
                (.setLanguageVersion (Context/VERSION_1_7)))
